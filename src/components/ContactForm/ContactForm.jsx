@@ -21,7 +21,6 @@ class ContactForm extends Component {
 
     addContact({ id: nanoid(), name, number });
 
-    // Resetowanie formularza po dodaniu kontaktu
     this.setState({ name: '', number: '' });
   };
 
@@ -49,6 +48,7 @@ class ContactForm extends Component {
               required
               value={name}
               onChange={this.handleChange}
+              autoComplete="tel"
             />
           </label>
 
@@ -64,6 +64,7 @@ class ContactForm extends Component {
               required
               value={number}
               onChange={this.handleChange}
+              autoComplete="tel"
             />
           </label>
           <button className={css.formBtn} type="submit">
